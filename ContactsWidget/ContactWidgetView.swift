@@ -7,6 +7,15 @@
 
 
 import SwiftUI
+import WidgetKit
+
+struct ContactWidgetView : View {
+    var entry: Provider.Entry
+
+    var body: some View {
+        ContactUIView()
+    }
+}
  
 struct ContactUIView: View {
     var body: some View {
