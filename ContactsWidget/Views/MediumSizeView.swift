@@ -9,11 +9,13 @@ import SwiftUI
 import WidgetKit
 
 struct MediumSizeView: View {
-    var entry: SimpleEntry
+    var entry: ContactEntry
+    
+    let firstContact = ContactServices.shared.getFirstContact()
     
     var body: some View {
         GroupBox(content: {
-            Image(systemName: "person")
+            Image(systemName: firstContact.imageName)
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(.secondary)
@@ -21,13 +23,19 @@ struct MediumSizeView: View {
             Divider()
             
             VStack(alignment: .center) {
-                Text("First rows")
-                Text("Second row")
-            }
-            
+                Text(firstContact.name)
+                Text(firstContact.phoneNumber)
+            } 
         }, label: {
-            Label("Contacts", image: "list.dash")
+            Text("Contacts")
         })
-        .widgetURL(URL(string: "myowncontacts://todo/1"))
     }
 }
+//
+//struct MediumSizeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let firstContact = ContactServices.shared.getFirstContact()
+//        
+//        MediumSizeView(entry: ContactEntry(date: .now, contact: firstContact))
+//    }
+//}

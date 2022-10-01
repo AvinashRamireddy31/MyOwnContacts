@@ -8,17 +8,9 @@
 import SwiftUI
 import Contacts
 
-struct Contact: Identifiable {
-    let imageName: String
-    let name: String
-    let phoneNumber: String
-    let id = UUID()
-}
 
-let allContacts = [
-    Contact(imageName: Constants.personImageName, name: "Sahithi", phoneNumber: "+919916705330"),
-    Contact(imageName: Constants.personImageName, name: "Balu", phoneNumber: "+916281226386")
-]
+
+var allContacts = ContactServices.shared.getAllContacts()
  
 struct HomeView: View {
     

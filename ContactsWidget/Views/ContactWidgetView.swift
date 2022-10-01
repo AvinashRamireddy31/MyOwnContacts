@@ -17,10 +17,11 @@ struct ContactWidgetView : View {
 
     var body: some View {
         switch widgetFamily {
+        case .systemSmall:
+            SmallSizeView(entry: entry)
         case .systemMedium:
             MediumSizeView(entry: entry)
-        case .systemLarge:
-            LargeSizeView(entry: entry)
+        
         default:
             Text("Not Required as we are handling supported families")
         }

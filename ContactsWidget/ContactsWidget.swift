@@ -18,15 +18,19 @@ struct ContactsWidget: Widget {
             StaticConfiguration(kind: kind, provider: Provider()) { entry in
                 ContactWidgetView(entry: entry)
             }
-            .configurationDisplayName("My Own contacts")
+            .configurationDisplayName("My Own Contacts")
             .description("Contacts on lockscreen")
-            .supportedFamilies([.systemMedium, .systemLarge])
+            .supportedFamilies([.systemMedium, .systemSmall])
         }
 }
 
 struct ContactsWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ContactWidgetView(entry: SimpleEntry(date: Date())).previewContext(WidgetPreviewContext(family: .systemMedium))
-        ContactWidgetView(entry: SimpleEntry(date: Date())).previewContext(WidgetPreviewContext(family: .systemLarge))
-    } 
+        let entry = ContactEntry(date: .now, contact: ContactServices.shared.getFirstContact())
+        
+        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemMedium))
+        
+        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemSmall))
+          
+    }
 }

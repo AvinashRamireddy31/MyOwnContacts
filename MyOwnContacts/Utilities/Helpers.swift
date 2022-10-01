@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let personImageName = "person.crop.circle.fill"
+    static let rectImageName = "plus.rectangle"
 }

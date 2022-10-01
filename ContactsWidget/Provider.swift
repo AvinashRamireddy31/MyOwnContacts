@@ -10,29 +10,22 @@ import SwiftUI
 
 //Provider
 struct Provider: TimelineProvider {
-    typealias Entry = SimpleEntry
+    typealias Entry = ContactEntry
     
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> ContactEntry {
+        ContactEntry.placeHolderEntry
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    func getSnapshot(in context: Context, completion: @escaping (ContactEntry) -> ()) {
+        let entry = ContactEntry.placeHolderEntry
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let contact = ContactServices.shared.getAllContacts().first!
+        let contactEntry = ContactEntry(date: .now, contact: contact)
+        
+        let timeline = Timeline(entries: [contactEntry], policy: .never)
         completion(timeline)
     }
 }

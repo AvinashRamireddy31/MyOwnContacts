@@ -8,7 +8,7 @@
 import WidgetKit
 
 // Model
-struct SimpleEntry: TimelineEntry {
+struct ContactEntry: TimelineEntry {
     let date: Date
 }
 
