@@ -6,28 +6,37 @@
 //
 
 import SwiftUI
-
+import Contacts
+ 
 struct ContentView: View {
     
-    @ObservedObject var contactsStore = FetchedContacts()
-    
     var body: some View {
-        NavigationView {
-            
-            HStack {
-                Text(contactsStore.contacts.count.description)
-                    .font(Font.custom("Poppins-Medium", size: 16))
-                    
-                Text("contacts found")
-                    .font(Font.custom("Lato-Regular", size: 12))
-                
+        Text("Hello world")
+            .padding()
+            .onAppear() {
+                Task {
+                   await self.fetchAllContacts()
+                }
             }
-            
-//            List {
-//                ForEach(contactsStore.contacts) { contact in
-//                    DetailedContactView(contact: contact)
-//                }
-//            }
-        }
     }
+    
+    fileprivate func fetchAllContacts() async {
+        let store = CNContactStore()
+        
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        
+        do {
+            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
+                print(contact.givenName)
+            })
+        }
+        
+        catch {
+            print("Error fetching contacts")
+        }
+    } 
 }
+
+
