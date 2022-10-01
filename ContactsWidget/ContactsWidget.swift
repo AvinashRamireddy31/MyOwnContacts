@@ -8,6 +8,14 @@
 import WidgetKit
 import SwiftUI
 
+
+// Model
+struct SimpleEntry: TimelineEntry {
+    let date: Date
+}
+
+
+//Provider
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
@@ -34,39 +42,28 @@ struct Provider: TimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-}
 
+// Widget View
 struct ContactsWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        let today = Date()
-        let modifiedDate = Calendar.current.date(byAdding: .hour, value: 2, to: today)!
-         
-        Text(modifiedDate, style: .time)
+        ContactUIView()
     }
 }
 
+
+// Main Widget
 @main
 struct ContactsWidget: Widget {
     let kind: String = "ContactsWidget"
-
+    
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            ContactsWidgetEntryView(entry: entry)
+            StaticConfiguration(kind: kind, provider: Provider()) { entry in
+                ContactsWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("Migraine Buddy")
+            .description("Track Headhache & Pain.")
+            .supportedFamilies([.systemMedium])
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
-
-struct ContactsWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ContactsWidgetEntryView(entry: SimpleEntry(date: Date()))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-        }
-    }
 }

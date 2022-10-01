@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var contactsStore = FetchedContacts()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        NavigationView {
+            
+            HStack {
+                Text(contactsStore.contacts.count.description)
+                    .font(Font.custom("Poppins-Medium", size: 16))
+                    
+                Text("contacts found")
+                    .font(Font.custom("Lato-Regular", size: 12))
+                
+            }
+            
+//            List {
+//                ForEach(contactsStore.contacts) { contact in
+//                    DetailedContactView(contact: contact)
+//                }
+//            }
+        }
     }
 }
