@@ -28,5 +28,6 @@ struct MediumSizeView: View {
         }, label: {
             Label("Contacts", image: "list.dash")
         })
+        .widgetURL(URL(string: "myowncontacts://todo/1"))
     }
 }

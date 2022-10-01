@@ -13,26 +13,24 @@ struct Contact: Identifiable {
     let name: String
     let phoneNumber: String
     let id = UUID()
-} 
+}
 
 let allContacts = [
-    Contact(imageName: "plus", name: "Avinash", phoneNumber: "12343241"),
-    Contact(imageName: "heart.fill", name: "Sahithi", phoneNumber: "98734234"),
-    Contact(imageName: "heart.fill", name: "Avinash", phoneNumber: "61234320"),
-
+    Contact(imageName: Constants.personImageName, name: "Sahithi", phoneNumber: "+919916705330"),
+    Contact(imageName: Constants.personImageName, name: "Balu", phoneNumber: "+916281226386")
 ]
  
-struct ContentView: View {
+struct HomeView: View {
     
     var body: some View {
         NavigationView{
             List(allContacts) { contact in
-                NavigationLink(destination: ContactDetailView(contact: contact)) {
+                NavigationLink(destination: ContactDetailsView(contact: contact)) {
                     ContactRow(contact: contact)
                 }
             }
-            
-        }.navigationTitle("Contacts")
+            .navigationTitle("Contacts")
+        }
     }
     
     fileprivate func fetchAllContacts() async {
@@ -55,8 +53,8 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View{
-        ContentView()
+    static var previews: some View {
+        HomeView()
     }
 }
 
@@ -64,6 +62,6 @@ struct ContactRow: View {
     var contact: Contact
     
     var body: some View {
-         ContactDetailView(contact: contact)
+         ContactRowView(contact: contact)
     }
 }

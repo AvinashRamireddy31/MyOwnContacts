@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContactDetailView: View {
+struct ContactRowView: View {
     let contact: Contact
     
     var body: some View {
-        HStack{
+        HStack(alignment: .top) {
             Image(systemName: contact.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -23,14 +23,10 @@ struct ContactDetailView: View {
                      
                 Text(contact.phoneNumber)
                     .font(Font.custom("Lato-Regular", size: 12))
+                
+                Spacer()
             })
-        }
+        } 
     }
 }
-
-struct ContactDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactDetailView(contact: allContacts[0])
-            .padding(.top,60)
-    }
-}
+ 

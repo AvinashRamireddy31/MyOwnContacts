@@ -21,6 +21,8 @@ struct SomeView: View {
             }
             .fixedSize()
             .buttonStyle(.borderedProminent)
+        }.onOpenURL{url in
+            print(url)
         }
     }
 }
