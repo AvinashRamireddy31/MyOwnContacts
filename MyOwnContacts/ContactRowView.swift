@@ -11,7 +11,7 @@ struct ContactRowView: View {
     let contact: Contact
     
     var body: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .center) {
             Image(systemName: contact.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -22,9 +22,7 @@ struct ContactRowView: View {
                     .font(Font.custom("Poppins-Medium", size: 16))
                      
                 Text(contact.phoneNumber)
-                    .font(Font.custom("Lato-Regular", size: 12))
-                
-                Spacer()
+                    .font(Font.custom("Lato-Regular", size: 12)) 
             })
         } 
     }
