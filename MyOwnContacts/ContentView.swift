@@ -13,11 +13,10 @@ struct Contact: Identifiable {
     let name: String
     let phoneNumber: String
     let id = UUID()
-}
-
+} 
 
 let allContacts = [
-    Contact(imageName: "heart.fill", name: "Avinash", phoneNumber: "12343241"),
+    Contact(imageName: "plus", name: "Avinash", phoneNumber: "12343241"),
     Contact(imageName: "heart.fill", name: "Sahithi", phoneNumber: "98734234"),
     Contact(imageName: "heart.fill", name: "Avinash", phoneNumber: "61234320"),
 
