@@ -7,17 +7,33 @@
 
 import SwiftUI
 import Contacts
+
+struct Contact: Identifiable {
+    let imageName: String
+    let name: String
+    let phoneNumber: String
+    let id = UUID()
+}
+
+
+let allContacts = [
+    Contact(imageName: "heart.fill", name: "Avinash", phoneNumber: "12343241"),
+    Contact(imageName: "heart.fill", name: "Sahithi", phoneNumber: "98734234"),
+    Contact(imageName: "heart.fill", name: "Avinash", phoneNumber: "61234320"),
+
+]
  
 struct ContentView: View {
     
     var body: some View {
-        Text("Hello world")
-            .padding()
-            .onAppear() {
-                Task {
-                   await self.fetchAllContacts()
+        NavigationView{
+            List(allContacts) { contact in
+                NavigationLink(destination: ContactDetailView(contact: contact)) {
+                    ContactRow(contact: contact)
                 }
             }
+            
+        }.navigationTitle("Contacts")
     }
     
     fileprivate func fetchAllContacts() async {
@@ -39,4 +55,16 @@ struct ContentView: View {
     } 
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View{
+        ContentView()
+    }
+}
 
+struct ContactRow: View {
+    var contact: Contact
+    
+    var body: some View {
+         ContactDetailView(contact: contact)
+    }
+}
