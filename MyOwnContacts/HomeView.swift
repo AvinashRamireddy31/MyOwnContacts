@@ -14,14 +14,19 @@ var allContacts = ContactServices.shared.getAllContacts()
  
 struct HomeView: View {
     
+    @State var isDeeplink = false
     var body: some View {
         NavigationView{
             List(allContacts) { contact in
-                NavigationLink(destination: ContactDetailsView(contact: contact)) {
+                NavigationLink(destination: ContactDetailsView(contact: contact), isActive: $isDeeplink) {
                     ContactRow(contact: contact)
                 }
             }
             .navigationTitle("Contacts")
+        }.onOpenURL { url in
+            print("Url link is \(url)")
+            
+            isDeeplink = true
         }
     }
     

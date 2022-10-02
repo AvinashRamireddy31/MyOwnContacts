@@ -25,7 +25,7 @@ struct SmallSizeView: View {
                     Text(firstContact.name)
                 }.padding()
             }
-        }
+        }.widgetURL(URL(string:"myOwnContacts://testing"))
     }
 }
 

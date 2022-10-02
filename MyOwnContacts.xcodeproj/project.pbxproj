@@ -78,6 +78,7 @@
 		0D66150428E89DAB00322000 /* ContactServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServices.swift; sourceTree = "<group>"; };
 		0D66150828E89E4C00322000 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		0D66150C28E8A3AE00322000 /* SmallSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSizeView.swift; sourceTree = "<group>"; };
+		0DA251F128E978FC005D19F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DAEFADA28E7CFBB002E055A /* ContactWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +124,7 @@
 		0D520BE428D3107800861024 /* MyOwnContacts */ = {
 			isa = PBXGroup;
 			children = (
+				0DA251F128E978FC005D19F6 /* Info.plist */,
 				0D66150728E89E4100322000 /* Models */,
 				0D66150328E89D9F00322000 /* Services */,
 				0D66150028E89B5500322000 /* Utilities */,
@@ -467,6 +469,7 @@
 				DEVELOPMENT_TEAM = 46A64LW38H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyOwnContacts/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "Application wants to access your contacts list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -501,6 +504,7 @@
 				DEVELOPMENT_TEAM = 46A64LW38H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyOwnContacts/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "Application wants to access your contacts list";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
