@@ -29,6 +29,7 @@ struct ContactDetailsView: View {
     }
 }
 
+
 struct ContactDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         ContactDetailsView(contact: allContacts.first!)

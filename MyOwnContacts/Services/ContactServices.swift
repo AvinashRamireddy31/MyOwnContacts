@@ -14,13 +14,15 @@ final class ContactServices {
     func getAllContacts() -> [Contact] {
         let allContacts = [
             Contact(imageName: Constants.rectImageName, name: "Sahithi Reddy", phoneNumber: "+919916705330"),
-            Contact(imageName: Constants.rectImageName, name: "Balu", phoneNumber: "+916281226386")
+            Contact(imageName: Constants.rectImageName, name: "Balu", phoneNumber: "+916281226386"),
+            Contact(imageName: Constants.rectImageName, name: "Avinash", phoneNumber: "+919986250809"),
+            Contact(imageName: Constants.rectImageName, name: "XYZ", phoneNumber: "+919986250809")
         ]
         
         return allContacts
     }
     
     func getFirstContact() -> Contact {
-        return getAllContacts().first!
+        return getAllContacts()[0]
     }
 }

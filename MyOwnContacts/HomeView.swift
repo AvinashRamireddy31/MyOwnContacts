@@ -8,45 +8,35 @@
 import SwiftUI
 import Contacts
 
-
-
 var allContacts = ContactServices.shared.getAllContacts()
- 
+
 struct HomeView: View {
     
-    @State var isDeeplink = false
+    @State var activeUUID: UUID?
+    
     var body: some View {
         NavigationView{
+            
             List(allContacts) { contact in
-                NavigationLink(destination: ContactDetailsView(contact: contact), isActive: $isDeeplink) {
+                
+                NavigationLink(destination: ContactDetailsView(contact: contact), tag: contact.id, selection: $activeUUID) {
                     ContactRow(contact: contact)
                 }
             }
-            .navigationTitle("Contacts")
-        }.onOpenURL { url in
-            print("Url link is \(url)")
-            
-            isDeeplink = true
+            .navigationTitle(Text("Home"))
+            .onOpenURL { url in
+                
+                print("Url is \(url)")
+                if let host = url.host, let uuid = UUID(uuidString: host) {
+                    let selectedContact = allContacts.first(where: { i in i.name.lowercased() == "XYZ".lowercased()})
+                    print("host uuid is \(uuid)")
+                    activeUUID = selectedContact?.id
+                    
+                }
+                
+            }
         }
     }
-    
-    fileprivate func fetchAllContacts() async {
-        let store = CNContactStore()
-        
-        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
-        
-        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
-        
-        do {
-            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
-                print(contact.givenName)
-            })
-        }
-        
-        catch {
-            print("Error fetching contacts")
-        }
-    } 
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -59,6 +49,6 @@ struct ContactRow: View {
     var contact: Contact
     
     var body: some View {
-         ContactRowView(contact: contact)
+        ContactRowView(contact: contact)
     }
 }

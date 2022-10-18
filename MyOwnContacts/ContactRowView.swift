@@ -24,7 +24,7 @@ struct ContactRowView: View {
                 Text(contact.phoneNumber)
                     .font(Font.custom("Lato-Regular", size: 12)) 
             })
-        } 
+        }
     }
 }
  

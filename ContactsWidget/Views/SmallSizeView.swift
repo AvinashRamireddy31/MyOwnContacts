@@ -10,8 +10,16 @@ import SwiftUI
 struct SmallSizeView: View {
     var entry: ContactEntry
     
-    let firstContact = ContactServices.shared.getFirstContact()
+    private var firstContact: Contact
+    init(entry: ContactEntry) {
+        self.entry = entry
+        self.firstContact = ContactServices.shared.getFirstContact()
+        var widgetUrl = URL(string: "myOwnContacts://\(self.firstContact.id)")
+        
+        print("widget url is \(widgetUrl?.absoluteString)")
+    }
     
+
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
@@ -25,7 +33,7 @@ struct SmallSizeView: View {
                     Text(firstContact.name)
                 }.padding()
             }
-        }.widgetURL(URL(string:"myOwnContacts://testing"))
+        }.widgetURL(URL(string:"myOwnContacts://\(self.firstContact.id)"))
     }
 }
 

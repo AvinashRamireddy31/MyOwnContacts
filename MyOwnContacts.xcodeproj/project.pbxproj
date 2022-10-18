@@ -17,7 +17,6 @@
 		0D520C0128D310C700861024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D520C0028D310C700861024 /* Assets.xcassets */; };
 		0D520C0528D310C700861024 /* ContactsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0D520BF728D310C700861024 /* ContactsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0D6614F028E8235100322000 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6614EF28E8235100322000 /* ContactRowView.swift */; };
-		0D6614F228E8294400322000 /* SomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6614F128E8294400322000 /* SomeView.swift */; };
 		0D6614F428E855F000322000 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6614F328E855F000322000 /* Provider.swift */; };
 		0D6614F628E8589B00322000 /* ContactEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6614F528E8589B00322000 /* ContactEntry.swift */; };
 		0D6614FA28E8660E00322000 /* MediumSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6614F928E8660E00322000 /* MediumSizeView.swift */; };
@@ -69,7 +68,6 @@
 		0D520C0028D310C700861024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D520C0228D310C700861024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D6614EF28E8235100322000 /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
-		0D6614F128E8294400322000 /* SomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeView.swift; sourceTree = "<group>"; };
 		0D6614F328E855F000322000 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		0D6614F528E8589B00322000 /* ContactEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEntry.swift; sourceTree = "<group>"; };
 		0D6614F928E8660E00322000 /* MediumSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumSizeView.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				0D66150028E89B5500322000 /* Utilities */,
 				0D520BE528D3107800861024 /* MyOwnContactsApp.swift */,
 				0D520BE728D3107800861024 /* HomeView.swift */,
-				0D6614F128E8294400322000 /* SomeView.swift */,
 				0D6614EF28E8235100322000 /* ContactRowView.swift */,
 				0D6614FE28E8991B00322000 /* ContactDetailsView.swift */,
 				0D520BE928D3107900861024 /* Assets.xcassets */,
@@ -307,7 +304,6 @@
 				0D6614FF28E8991B00322000 /* ContactDetailsView.swift in Sources */,
 				0D66150228E89B5D00322000 /* Helpers.swift in Sources */,
 				0D66150528E89DAB00322000 /* ContactServices.swift in Sources */,
-				0D6614F228E8294400322000 /* SomeView.swift in Sources */,
 				0D66150928E89E4C00322000 /* Contact.swift in Sources */,
 				0D6614F028E8235100322000 /* ContactRowView.swift in Sources */,
 				0D520BE828D3107800861024 /* HomeView.swift in Sources */,
