@@ -25,23 +25,21 @@ struct HomeView: View {
             }
             .navigationTitle(Text("Home"))
             .onOpenURL { url in
-                
-                print("Url is \(url)")
+                print("url is \(url)")
                 if let host = url.host, let uuid = UUID(uuidString: host) {
-                    let selectedContact = allContacts.first(where: { i in i.name.lowercased() == "XYZ".lowercased()})
-                    print("host uuid is \(uuid)")
-                    activeUUID = selectedContact?.id
+                    
+//                    let firstContact = ContactServices.shared.getFirstContact()
+//                    print("first contact id \(firstContact.id)")
+//                    activeUUID = firstContact.id
+                    
+                    activeUUID = uuid
+                    
+                    
                     
                 }
                 
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }
 

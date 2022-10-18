@@ -24,6 +24,9 @@ struct ContactDetailsView: View {
             Text(contact.phoneNumber)
                 .font(Font.custom("Lato-Regular", size: 25))
             
+            Text(contact.id.uuidString)
+                .font(Font.custom("Lato-Regular", size: 15))
+            
             Spacer()
         }
     }

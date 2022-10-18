@@ -10,40 +10,29 @@ import SwiftUI
 struct SmallSizeView: View {
     var entry: ContactEntry
     
-    private var firstContact: Contact
+//    private var firstContact: Contact
+    private var widgetUrl: URL?
+    
     init(entry: ContactEntry) {
         self.entry = entry
-        self.firstContact = ContactServices.shared.getFirstContact()
-        var widgetUrl = URL(string: "myOwnContacts://\(self.firstContact.id)")
-        
-        print("widget url is \(widgetUrl?.absoluteString)")
+//        self.firstContact = ContactServices.shared.getFirstContact()
+        self.widgetUrl = URL(string:"myOwnContacts://\(self.entry.contact.id)")
     }
-    
 
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
-                Image(systemName: firstContact.imageName)
+                Image(systemName: entry.contact.imageName)
                     .resizable()
                     .frame(width: geo.size.width, height: geo.size.height)
                     .aspectRatio(contentMode: .fill)
                     .foregroundColor(.red)
                  
                 VStack {
-                    Text(firstContact.name)
+                    Text(entry.contact.name)
+                    
                 }.padding()
             }
-        }.widgetURL(URL(string:"myOwnContacts://\(self.firstContact.id)"))
+        }.widgetURL(self.widgetUrl)
     }
 }
-
-
-//
-//struct SmallSizeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let firstContact = ContactServices.shared.getFirstContact()
-//        VStack {
-//            SmallSizeView(entry: ContactEntry(date: .now, contact: firstContact))
-//        }
-//    }
-//}

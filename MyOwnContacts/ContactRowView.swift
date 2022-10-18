@@ -18,11 +18,12 @@ struct ContactRowView: View {
                 .clipped()
                 .frame(width:50,height: 50)
             VStack(alignment: .leading, content: {
-                Text(contact.name)
+                Text(contact.name)		
                     .font(Font.custom("Poppins-Medium", size: 16))
-                     
                 Text(contact.phoneNumber)
-                    .font(Font.custom("Lato-Regular", size: 12)) 
+                    .font(Font.custom("Lato-Regular", size: 12))
+                Text(contact.id.uuidString)
+                    .font(Font.custom("Lato-Regular", size: 12))
             })
         }
     }
