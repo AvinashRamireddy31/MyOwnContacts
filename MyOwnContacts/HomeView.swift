@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Contacts
 
 var allContacts = ContactServices.shared.getAllContacts()
 
