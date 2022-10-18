@@ -13,7 +13,7 @@ import SwiftUI
 @main
 struct ContactsWidget: Widget {
     let kind: String = "ContactsWidget"
-    
+
     var body: some WidgetConfiguration {
             StaticConfiguration(kind: kind, provider: Provider()) { entry in
                 ContactWidgetView(entry: entry)
@@ -24,13 +24,26 @@ struct ContactsWidget: Widget {
         }
 }
 
-struct ContactsWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        let entry = ContactEntry(date: .now, contact: ContactServices.shared.getFirstContact())
-        
-        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemMedium))
-        
-        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemSmall))
-          
-    }
-}
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+//
+//struct ContactsWidget_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let entry = ContactEntry(date: .now, contact: ContactServices.shared.getFirstContact())
+//
+//        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemMedium))
+//
+//        ContactWidgetView(entry: entry).previewContext(WidgetPreviewContext(family: .systemSmall))
+//
+//    }
+//}

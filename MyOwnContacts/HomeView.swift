@@ -31,7 +31,7 @@ struct HomeView: View {
 //                    print("first contact id \(firstContact.id)")
 //                    activeUUID = firstContact.id
                     
-                    activeUUID = uuid
+//                    activeUUID = uuid
                     
                     
                     
