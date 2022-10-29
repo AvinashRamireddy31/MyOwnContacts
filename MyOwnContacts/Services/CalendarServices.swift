@@ -11,7 +11,6 @@ import Foundation
 final class CalendarServices {
     static let shared = CalendarServices()
     
-    
     func getAllEntries() -> [CalendarEntry] {
         let entries = [
             CalendarEntry(date: .now, timezone: "IST", heading: "Birthday", body: "Today is mihira's birthday"),

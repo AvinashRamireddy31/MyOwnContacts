@@ -22,7 +22,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let contact = ContactServices.shared.getAllContacts().first!
+        let contact = ContactServices.shared.getFirstContact()
         let contactEntry = ContactEntry(date: .now, contact: contact)
         
         let timeline = Timeline(entries: [contactEntry], policy: .never)

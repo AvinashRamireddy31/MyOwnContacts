@@ -32,6 +32,7 @@
 		0D72C9F428FF1FF4005A76F2 /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72C9F328FF1FF4005A76F2 /* CalendarServices.swift */; };
 		0D72C9F628FF1FFF005A76F2 /* CalendarEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72C9F528FF1FFF005A76F2 /* CalendarEntry.swift */; };
 		0DAEFADB28E7CFBB002E055A /* ContactWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAEFADA28E7CFBB002E055A /* ContactWidgetView.swift */; };
+		0DEE192F290D9F8000BDF28C /* CalendarRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEE192E290D9F8000BDF28C /* CalendarRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		0D72C9F528FF1FFF005A76F2 /* CalendarEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEntry.swift; sourceTree = "<group>"; };
 		0DA251F128E978FC005D19F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DAEFADA28E7CFBB002E055A /* ContactWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWidgetView.swift; sourceTree = "<group>"; };
+		0DEE192E290D9F8000BDF28C /* CalendarRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				0D520BE528D3107800861024 /* MyOwnContactsApp.swift */,
 				0D520BE728D3107800861024 /* HomeView.swift */,
 				0D72C9F128FF1FD7005A76F2 /* CalendarView.swift */,
+				0DEE192E290D9F8000BDF28C /* CalendarRowView.swift */,
 				0D6614EF28E8235100322000 /* ContactRowView.swift */,
 				0D6614FE28E8991B00322000 /* ContactDetailsView.swift */,
 				0D520BE928D3107900861024 /* Assets.xcassets */,
@@ -313,6 +316,7 @@
 				0D6614FF28E8991B00322000 /* ContactDetailsView.swift in Sources */,
 				0D66150228E89B5D00322000 /* Helpers.swift in Sources */,
 				0D72C9F228FF1FD7005A76F2 /* CalendarView.swift in Sources */,
+				0DEE192F290D9F8000BDF28C /* CalendarRowView.swift in Sources */,
 				0D66150528E89DAB00322000 /* ContactServices.swift in Sources */,
 				0D66150928E89E4C00322000 /* Contact.swift in Sources */,
 				0D6614F028E8235100322000 /* ContactRowView.swift in Sources */,
@@ -400,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -454,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

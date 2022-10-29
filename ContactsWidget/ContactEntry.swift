@@ -13,9 +13,9 @@ struct ContactEntry: TimelineEntry {
     let contact: Contact
     
     static var placeHolderEntry: ContactEntry {
-        let placeholderContact = Contact(imageName: Constants.personImageName, name: "John Doe", phoneNumber: "+916212345678")
+        let firstContact = ContactServices.shared.getFirstContact()
         
-        return ContactEntry(date: .now, contact: placeholderContact)
+        return ContactEntry(date: .now, contact: firstContact)
     }
 }
 

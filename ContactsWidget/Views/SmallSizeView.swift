@@ -10,13 +10,10 @@ import SwiftUI
 struct SmallSizeView: View {
     var entry: ContactEntry
     
-//    private var firstContact: Contact
     private var widgetUrl: URL?
     
     init(entry: ContactEntry) {
         self.entry = entry
-//        self.firstContact = ContactServices.shared.getFirstContact()
-        self.widgetUrl = URL(string:"myOwnContacts://\(self.entry.contact.id)")
     }
 
     var body: some View {
@@ -33,6 +30,6 @@ struct SmallSizeView: View {
                     
                 }.padding()
             }
-        }.widgetURL(self.widgetUrl)
+        }.widgetURL(URL(string:"myOwnContacts://\(self.entry.contact.name)"))
     }
 }

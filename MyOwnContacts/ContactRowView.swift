@@ -11,12 +11,12 @@ struct ContactRowView: View {
     let contact: Contact
     
     var body: some View {
-        HStack(alignment: .center) {
+        HStack(alignment: .top) {
             Image(systemName: contact.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipped()
-                .frame(width:50,height: 50)
+                .frame(width:20,height: 20)
             VStack(alignment: .leading, content: {
                 Text(contact.name)		
                     .font(Font.custom("Poppins-Medium", size: 16))

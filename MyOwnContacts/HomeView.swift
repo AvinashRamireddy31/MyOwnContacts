@@ -7,45 +7,23 @@
 
 import SwiftUI
 
-var allContacts = ContactServices.shared.getAllContacts()
-
 struct HomeView: View {
     
-    @State var activeUUID: UUID?
+    @State private var allContacts = ContactServices.shared.getAllContacts()
+    @State private var contactsStack:[Contact] = []
     
     var body: some View {
-        NavigationView{
-            
+        NavigationStack {
             List(allContacts) { contact in
-                
-                NavigationLink(destination: ContactDetailsView(contact: contact), tag: contact.id, selection: $activeUUID) {
-                    ContactRow(contact: contact)
+                NavigationLink(value: contact) {
+                    ContactRowView(contact: contact)
                 }
             }
-            .navigationTitle(Text("Home"))
-            .onOpenURL { url in
-                print("url is \(url)")
-                if let host = url.host, let uuid = UUID(uuidString: host) {
-                    
-//                    let firstContact = ContactServices.shared.getFirstContact()
-//                    print("first contact id \(firstContact.id)")
-//                    activeUUID = firstContact.id
-                    
-//                    activeUUID = uuid
-                    
-                    
-                    
-                }
-                
+            .navigationTitle(Text("Contacts"))
+            .navigationDestination(for: Contact.self) {contact in
+                ContactDetailsView(contact: contact)
             }
         }
     }
 }
-
-struct ContactRow: View {
-    var contact: Contact
-    
-    var body: some View {
-        ContactRowView(contact: contact)
-    }
-}
+ 

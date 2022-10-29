@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct CalendarView: View {
-    private var entries = CalendarServices.shared.getAllEntries()
+    @State private var entries = CalendarServices.shared.getAllEntries()
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             
             List(entries) { entry in
-                Text(entry.heading) 
-            }
-            .navigationTitle(Text("Timeline"))
-            .navigationBarTitleDisplayMode(.inline)
+                NavigationLink(value: entry) {
+                    CalendarRowView(entry: entry)
+                }
+            } 
+            .navigationDestination(for: CalendarEntry.self, destination: { entry in
+                Text(entry.body)
+            })
         }
     }
-}
-
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
-    }
-}
+} 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CalendarEntry: Identifiable {
+struct CalendarEntry: Identifiable, Hashable {
     let id = UUID()
     let date: Date
     let timezone: String

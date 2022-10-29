@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Contact: Identifiable {
+struct Contact: Identifiable, Hashable {
+    let id: UUID
     let imageName: String
     let name: String
     let phoneNumber: String
-    let id = UUID()
+    
 }
