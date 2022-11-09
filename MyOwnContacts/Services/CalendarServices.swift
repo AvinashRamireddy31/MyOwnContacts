@@ -13,9 +13,14 @@ final class CalendarServices {
     
     func getAllEntries() -> [CalendarEntry] {
         let entries = [
-            CalendarEntry(date: .now, timezone: "IST", heading: "Birthday", body: "Today is mihira's birthday"),
-            CalendarEntry(date: .now, timezone: "IST", heading: "Out", body: "Going out"),
-            CalendarEntry(date: .now, timezone: "IST", heading: "Car", body: "Driving car"),
+            CalendarEntry(date: .now, timezone: "12", heading: "MON", body: "Today is Mihira's birthday"),
+            CalendarEntry(date: .now, timezone: "", heading: "", body: "Today is Mahathi's birthday"),
+            CalendarEntry(date: .now, timezone: "13", heading: "TUE", body: "Going out"),
+            CalendarEntry(date: .now, timezone: "14", heading: "WED", body: "Driving car"),
+            CalendarEntry(date: .now, timezone: "15", heading: "THU", body: "Driving car"),
+            CalendarEntry(date: .now, timezone: "16", heading: "FRI", body: "Driving car"),
+            CalendarEntry(date: .now, timezone: "17", heading: "SAT", body: "Driving car"),
+            CalendarEntry(date: .now, timezone: "18", heading: "SUN", body: "Driving car"),
             
         ]
         
